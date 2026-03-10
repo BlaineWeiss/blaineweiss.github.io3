@@ -1,5 +1,69 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Contact | Blaine Weiss</title><link rel="stylesheet" href="assets/styles.css"></head><body>
-<header class="site-header glass"><a class="brand" href="index.html">BLAINE WEISS</a><nav><a href="about.html">About</a><a href="tools.html">Tools</a><a href="publications.html">Publications</a><a href="cv.html">CV</a><a href="contact.html">Contact</a></nav></header>
-<main><section class="page-hero glass"><p class="eyebrow">Contact</p><h1>Let’s collaborate.</h1><p class="lead">Use this contact card to connect for collaborations, talks, or data-analysis support.</p></section>
-<section class="section glass"><article class="card"><h3>Blaine Weiss</h3><p>Email: your.email@institution.edu</p><p>Lab: Neurovascular Imaging Lab</p><p>Office: Building / Room</p><p><a class="btn primary" href="mailto:your.email@institution.edu">Send Email</a></p></article></section></main><footer>© Blaine Weiss</footer>
-</body></html>
+ (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
+diff --git a/contact.html b/contact.html
+index 2e7db56416d69f025b0b4a3716ac49fe54b75d9b..9cb3ef425e79e6c14638e20d483c47c9478309ce 100644
+--- a/contact.html
++++ b/contact.html
+@@ -1,5 +1,55 @@
+-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Contact | Blaine Weiss</title><link rel="stylesheet" href="assets/styles.css"></head><body>
+-<header class="site-header glass"><a class="brand" href="index.html">BLAINE WEISS</a><nav><a href="about.html">About</a><a href="tools.html">Tools</a><a href="publications.html">Publications</a><a href="cv.html">CV</a><a href="contact.html">Contact</a></nav></header>
+-<main><section class="page-hero glass"><p class="eyebrow">Contact</p><h1>Let’s collaborate.</h1><p class="lead">Use this contact card to connect for collaborations, talks, or data-analysis support.</p></section>
+-<section class="section glass"><article class="card"><h3>Blaine Weiss</h3><p>Email: your.email@institution.edu</p><p>Lab: Neurovascular Imaging Lab</p><p>Office: Building / Room</p><p><a class="btn primary" href="mailto:your.email@institution.edu">Send Email</a></p></article></section></main><footer>© Blaine Weiss</footer>
+-</body></html>
++<!DOCTYPE html>
++<html lang="en">
++<head>
++  <meta charset="UTF-8" />
++  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
++  <title>Contact | Blaine Weiss</title>
++  <link rel="preconnect" href="https://fonts.googleapis.com" />
++  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
++  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet" />
++  <link rel="stylesheet" href="assets/styles.css" />
++</head>
++<body>
++  <header class="site-header glass">
++    <a class="brand" href="index.html">BLAINE WEISS</a>
++    <nav>
++      <a href="index.html">Home</a>
++      <a href="about.html">About</a>
++      <a href="tools.html">Tools</a>
++      <a href="publications.html">Publications</a>
++      <a href="cv.html">CV</a>
++      <a class="active" href="contact.html">Contact</a>
++    </nav>
++  </header>
++
++  <main>
++    <section class="page-hero glass">
++      <p class="eyebrow">Contact</p>
++      <h1>Let’s collaborate on neurovascular science.</h1>
++      <p class="lead">Use this professional contact card for collaborations, speaking invitations, software demos, or data-analysis partnerships.</p>
++    </section>
++
++    <section class="section glass split-grid">
++      <article class="split-panel">
++        <h2>Contact Card</h2>
++        <p><strong>Blaine Weiss</strong><br />Neurovascular Imaging Researcher</p>
++        <p>Email: your.email@institution.edu<br />Lab: Neurovascular Imaging Lab<br />Location: City, State</p>
++        <div class="cta-row">
++          <a class="btn primary" href="mailto:your.email@institution.edu">Send Email</a>
++          <a class="btn" href="cv.html">View CV</a>
++        </div>
++      </article>
++      <article class="split-panel">
++        <h2>Collaboration Interests</h2>
++        <div class="list">
++          <article><h3>Imaging Method Development</h3><p class="lead">Joint development of analysis pipelines and validation datasets.</p></article>
++          <article><h3>Neurovascular Mechanisms</h3><p class="lead">Astrocyte-endfoot signaling, vessel responses, and mechanistic modeling.</p></article>
++          <article><h3>Software + Visualization</h3><p class="lead">Interactive scientific communication and conference-ready visual narratives.</p></article>
++        </div>
++      </article>
++    </section>
++  </main>
++
++  <footer>© Blaine Weiss • Neurovascular Imaging</footer>
++</body>
++</html>
+ 
+EOF
+)
