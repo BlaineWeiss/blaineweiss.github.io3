@@ -4,23 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Publications &amp; CV – Blaine Weiss</title>
-    <!-- Apply saved colour scheme before CSS loads to prevent flash -->
     <script>
       (function () {
         try {
           var stored = localStorage.getItem('theme');
           var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
           var useDark = stored ? stored === 'dark' : prefersDark;
-          if (useDark) {
-            document.documentElement.classList.add('dark');
-          }
-        } catch (e) {
-          /* ignore */
-        }
+          if (useDark) document.documentElement.classList.add('dark');
+        } catch (e) {}
       })();
     </script>
-    <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="Vendor/bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
@@ -33,66 +27,41 @@
             <li><a href="portfolio.html">Portfolio</a></li>
             <li><a href="publications.html" class="active">Publications &amp; CV</a></li>
             <li><a href="tools.html">Tools</a></li>
+            <li><a href="profile.html">Profile Card</a></li>
           </ul>
         </nav>
-        <button id="mode-toggle" class="mode-toggle" aria-label="Toggle dark/light mode">
-          🌙
-        </button>
+        <button id="mode-toggle" class="mode-toggle" aria-label="Toggle dark/light mode">🌙</button>
       </div>
     </header>
-    <main class="container" style="padding:2rem 0;">
+
+    <main class="container section-spacer">
       <h2>Publications &amp; CV</h2>
-      <p>
-        Below you will find a curated list of my recent publications. Each entry
-        lists the title, authors, venue and year, along with a link to the
-        published article when available. My work focuses on astrocyte calcium
-        dynamics, neurovascular coupling and cerebrovascular function in
-        neurodegenerative disease models.
-      </p>
-      <section class="profile-links" style="margin-top:1rem; margin-bottom:2rem;">
-        <strong>Profiles:</strong>
-        <ul style="list-style:none; padding-left:0; display:flex; flex-wrap:wrap; gap:1rem;">
-          <li><a href="https://scholar.google.com/citations?user=GAqx4AYAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">
-          
-              <i class="bi bi-mortarboard"></i> Google Scholar
-            </a> 
-          </li>
-          <li><a href="https://www.researchgate.net/profile/Blaine-Weiss" target="_blank" rel="noopener">ResearchGate
-            <svg class="icon me-2" viewBox="0 0 24 24" aria-hidden="true"> xmlns="http://www.w3.org/2000/svg" id="researchgate">
-  <path fill="#2FCAAA" d="M0 24h24V0H0v24zM13.549 7.233c0-.654.472-1.628 1.822-1.628S17 6.564 17 6.564l-.574.385s-.295-.67-1.055-.67c-.423 0-1.055.391-1.055 1.055v1.435c0 .718.353 1.248.959 1.248.755 0 1.152-.584 1.152-1.435h-.959v-.574h1.629c0 1.098.251 2.673-1.822 2.673l-.001.001c-1.248 0-1.725-.841-1.725-1.724V7.233zM5.635 17.48c.831-.155 1.178-.07 1.178-1.28v-5.861c0-1.21-.343-1.125-1.178-1.28v-.434c1.382.054 2.845-.032 3.798-.032 1.698 0 2.994.771 2.994 2.442 0 1.13-.895 2.261-2.101 2.545a17.86 17.86 0 0 0 2.26 3.155c.385.418.921.787 1.457.787v.391h.002c-.353.161-1.778.321-2.679-.761-.493-.568-1.355-1.784-2.261-3.407-.477 0-.787 0-1.146-.032V16.2c0 1.259.321 1.136 1.382 1.28v.434a52.203 52.203 0 0 0-1.908-.044c-.702 0-1.398.032-1.8.044v-.434z"></path>
-  <path fill="#2FCAAA" d="M9.032 13.078c1.323 0 2.127-.788 2.127-1.961 0-1.194-.745-1.848-1.993-1.848-.402 0-.863 0-1.206.032v3.734c.344.026.568.042 1.072.042v.001z"></path>
-</svg>
-          </a>
-          </li>
-        </ul>
-      </section>
+      <p>My work centers on astrocyte calcium dynamics, neurovascular coupling, and cerebrovascular function across neurodegeneration models.</p>
+      <p><a href="profile.html">Open dedicated profile card page</a> for contact/social details.</p>
+
       <section class="publications-list">
-       
-        <article class="pub-item">
-          <h3>Disrupted calcium dynamics in reactive astrocytes occur with endfeet–arteriole decoupling in an amyloid mouse model of Alzheimer’s disease (preprint, 2025)</h3>
-          <p class="pub-authors">Blaine E. Weiss, J. Christopher Gant, Ruei‑Lung Lin, Jenna L. Gollihue, Susan D. Kraner, Edmund B. Rucker, Yuriko Katsumata, Yang Jiang, Peter T. Nelson, Donna M. Wilcock, Pradoldej Sompol, Olivier Thibault, Christopher M. Norris</p>
-          <p class="pub-venue">bioRxiv preprint 2025&nbsp;Mar&nbsp;1.</p>
-          <p><a href="https://pubmed.ncbi.nlm.nih.gov/39896447/" target="_blank" rel="noopener">PubMed</a> • <a href="https://doi.org/10.1101/2025.01.24.634584" target="_blank" rel="noopener">DOI</a></p>
+        <article class="pub-item glass-panel">
+          <h3>Disrupted calcium dynamics in reactive astrocytes occur with endfeet–arteriole decoupling in an amyloid mouse model of Alzheimer's disease (preprint, 2025)</h3>
+          <p class="pub-authors">Blaine E. Weiss et al.</p>
+          <p class="pub-venue">bioRxiv preprint, 2025.</p>
+          <p><a href="https://www.biorxiv.org/content/10.1101/2025.01.24.634584v2" target="_blank" rel="noopener">bioRxiv</a> • <a href="https://doi.org/10.1101/2025.01.24.634584" target="_blank" rel="noopener">DOI</a></p>
         </article>
-         <article class="pub-item">
-          <h3>Elevated calcineurin activity in primary astrocytes leads to the dephosphorylation of connexin 43 in conjunction with increased membrane permeability (2024)</h3>
-          <p class="pub-authors">Blaine E. Weiss, Susan D. Kraner, Irina A. Artiushin, Christopher M. Norris</p>
-          <p class="pub-venue">Neuroreport, 2024&nbsp;Jul&nbsp;1;35(10):673–678.</p>
-          <p><a href="https://pubmed.ncbi.nlm.nih.gov/38813906/" target="_blank" rel="noopener">PubMed</a> • <a href="https://doi.org/10.1097/WNR.0000000000002051" target="_blank" rel="noopener">DOI</a></p>
-        </article>
-        <article class="pub-item">
-          <h3>Targeting astrocyte signaling alleviates cerebrovascular and synaptic function deficits in a diet‑based mouse model of small cerebral vessel disease (2023)</h3>
-          <p class="pub-authors">Pradoldej Sompol, Jenna L. Gollihue, Blaine E. Weiss, Ruei‑Lung Lin, Sami L. Case, Susan D. Kraner, Erica M. Weekman, John C. Gant, Colin B. Rogers, Dana M. Niedowicz, Tiffany L. Sudduth, David K. Powell, Ai‑Ling Lin, Peter T. Nelson, Olivier Thibault, Donna M. Wilcock, Christopher M. Norris</p>
-          <p class="pub-venue">Journal&nbsp;of&nbsp;Neuroscience, 2023&nbsp;Mar&nbsp;8;43(10):1797–1813.</p>
-          <p><a href="https://pubmed.ncbi.nlm.nih.gov/36746627/" target="_blank" rel="noopener">PubMed</a> • <a href="https://doi.org/10.1523/JNEUROSCI.1333-22.2023" target="_blank" rel="noopener">DOI</a></p>
+
+        <article class="pub-item glass-panel">
+          <h3>Elevated calcineurin activity in primary astrocytes leads to the dephosphorylation of connexin 43 in conjunction with increased membrane permeability (2024)</h3>
+          <p class="pub-authors">Blaine E. Weiss et al.</p>
+          <p class="pub-venue">Neuroreport, 2024.</p>
+          <p><a href="https://pubmed.ncbi.nlm.nih.gov/38813906/" target="_blank" rel="noopener">PubMed</a></p>
         </article>
       </section>
     </main>
+
     <footer class="site-footer">
       <div class="container">
         <p>&copy; <span id="year"></span> Blaine Weiss. All rights reserved.</p>
       </div>
     </footer>
+
     <script src="js/main.js"></script>
   </body>
 </html>
