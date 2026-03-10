@@ -4,14 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tools – Blaine Weiss</title>
+    <!-- Apply saved colour scheme before CSS loads to prevent flash -->
     <script>
       (function () {
         try {
           var stored = localStorage.getItem('theme');
           var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
           var useDark = stored ? stored === 'dark' : prefersDark;
-          if (useDark) document.documentElement.classList.add('dark');
-        } catch (e) {}
+          if (useDark) {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {
+          /* ignore */
+        }
       })();
     </script>
     <link rel="stylesheet" href="css/style.css" />
@@ -26,51 +31,40 @@
             <li><a href="portfolio.html">Portfolio</a></li>
             <li><a href="publications.html">Publications &amp; CV</a></li>
             <li><a href="tools.html" class="active">Tools</a></li>
-            <li><a href="profile.html">Profile Card</a></li>
           </ul>
         </nav>
-        <button id="mode-toggle" class="mode-toggle" aria-label="Toggle dark/light mode">🌙</button>
+        <button id="mode-toggle" class="mode-toggle" aria-label="Toggle dark/light mode">
+          🌙
+        </button>
       </div>
     </header>
-
-    <main class="container section-spacer">
-      <h2>Research Utilities</h2>
-      <p class="muted">Client-side tools for rapid microscopy workflows. No uploads leave your browser.</p>
-
-      <section class="cards-3 tools-grid">
-        <article class="glass-panel tool-box">
-          <h3>TIFF / OME Metadata Reader</h3>
-          <input type="file" id="file-input" accept=".tif,.tiff,.ome.tif,.ome.tiff" />
-          <button id="extract-btn" class="cta-btn" disabled>Extract Metadata</button>
-          <button id="copy-btn" class="ghost-btn" disabled>Copy Results</button>
-          <pre id="metadata-output"></pre>
-          <p class="small muted">Supports core TIFF tags and common OME metadata fields.</p>
-        </article>
-
-        <article class="glass-panel tool-box">
-          <h3>Pixel ↔ Micron Converter</h3>
-          <label>Pixel count <input id="px-value" type="number" min="0" step="any" placeholder="e.g., 512" /></label>
-          <label>Microns / pixel <input id="mpp-value" type="number" min="0" step="any" placeholder="e.g., 0.42" /></label>
-          <button id="convert-btn" class="cta-btn">Convert</button>
-          <p id="convert-output" class="tool-output"></p>
-        </article>
-
-        <article class="glass-panel tool-box">
-          <h3>Frame Timing Calculator</h3>
-          <label>Frames per second (Hz) <input id="fps-value" type="number" min="0" step="any" placeholder="e.g., 29.97" /></label>
-          <button id="fps-btn" class="cta-btn">Calculate Interval</button>
-          <p id="fps-output" class="tool-output"></p>
-        </article>
-      </section>
+    <main class="container" style="padding:2rem 0;">
+      <h2>Interactive Tools</h2>
+      <p>
+        Below is a placeholder for the image metadata extraction tool. When
+        implemented, visitors will be able to upload microscope TIFF/OME‑TIFF
+        files and view key metadata (e.g. resolution, frame rate, scaling) in
+        their browser. Support for ND2 files will be provided via a small
+        server‑side conversion service.
+      </p>
+      <div class="tool-placeholder">
+        <input type="file" id="file-input" accept=".tif,.tiff,.ome.tif,.ome.tiff" />
+        <button id="extract-btn" disabled>Extract Metadata</button>
+        <pre id="metadata-output" style="white-space: pre-wrap; margin-top: 1rem;"></pre>
+      </div>
+      <p style="margin-top:2rem;">
+        Additional tools (e.g. calculators, image viewers or neural network
+        demos) can be added here. Each tool should run client‑side when
+        possible to keep performance snappy.
+      </p>
     </main>
-
     <footer class="site-footer">
       <div class="container">
         <p>&copy; <span id="year"></span> Blaine Weiss. All rights reserved.</p>
       </div>
     </footer>
-
     <script src="js/main.js"></script>
+    <!-- Script for parsing TIFF/OME‑TIFF metadata and enabling the tool -->
     <script src="js/tools.js"></script>
   </body>
 </html>
