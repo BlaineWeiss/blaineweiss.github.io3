@@ -1,4 +1,3 @@
- (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
 diff --git a/assets/styles.css b/assets/styles.css
 index 5c715380a49a4b518d55485a8ea71f71c6d632af..a409205909edd2c18c311388a1373e5afede8468 100644
 --- a/assets/styles.css
@@ -345,6 +344,3 @@ index 5c715380a49a4b518d55485a8ea71f71c6d632af..a409205909edd2c18c311388a1373e5a
 +
 +  #stone-canvas { min-height: 420px; }
  }
- 
-EOF
-)
