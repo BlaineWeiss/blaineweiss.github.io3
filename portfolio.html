@@ -4,17 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio – Blaine Weiss</title>
+    <!-- Apply saved colour scheme before CSS loads to prevent flash -->
     <script>
       (function () {
         try {
           var stored = localStorage.getItem('theme');
           var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
           var useDark = stored ? stored === 'dark' : prefersDark;
-          if (useDark) document.documentElement.classList.add('dark');
-        } catch (e) {}
+          if (useDark) {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {
+          /* ignore */
+        }
       })();
     </script>
-    <link rel="stylesheet" href="Vendor/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
@@ -27,38 +33,42 @@
             <li><a href="portfolio.html" class="active">Portfolio</a></li>
             <li><a href="publications.html">Publications &amp; CV</a></li>
             <li><a href="tools.html">Tools</a></li>
-            <li><a href="profile.html">Profile Card</a></li>
           </ul>
         </nav>
-        <button id="mode-toggle" class="mode-toggle" aria-label="Toggle dark/light mode">🌙</button>
+        <button id="mode-toggle" class="mode-toggle" aria-label="Toggle dark/light mode">
+          🌙
+        </button>
       </div>
     </header>
-
-    <main class="container section-spacer">
+    <main class="container" style="padding:2rem 0;">
       <h2>Portfolio</h2>
-      <p>Scientific media production highlights from in vivo imaging studies.</p>
-      <section class="media-strip large-gap">
-        <figure>
-          <img src="assets/gifs/TESTsupp1.gif" alt="Awake imaging supplementary footage" />
-          <figcaption>Supplementary imaging sequence</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/gifs/AWROITracesFigure.gif" alt="Astrocyte ROI traces animation" />
-          <figcaption>Astrocyte ROI traces</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/gifs/placeholder.gif" alt="Video placeholder for additional projects" />
-          <figcaption>Additional project reels</figcaption>
-        </figure>
+      <p>
+        Here you can showcase your completed research projects, analysis software
+        and interactive demonstrations. Each project can include an image
+        gallery, video clips and a description of your methodology and
+        findings.
+      </p>
+      <p>
+        This page is currently a placeholder. Replace this content with a
+        dynamic list or grid of your projects.
+      </p>
+
+      <section class="gif-gallery-section" style="margin-top:3rem;">
+        <h3>Research Videos</h3>
+        <p>Scroll horizontally to explore short clips and GIFs from my imaging experiments.</p>
+        <div class="gif-gallery">
+          <!-- Replace these <img> elements with your own GIFs or videos. You can
+               add more images by placing files in the `assets/gifs/` folder and
+               adding additional <img> tags here. -->
+          <img src="assets/gifs/placeholder.gif" alt="Research video placeholder" />
+        </div>
       </section>
     </main>
-
     <footer class="site-footer">
       <div class="container">
         <p>&copy; <span id="year"></span> Blaine Weiss. All rights reserved.</p>
       </div>
     </footer>
-
     <script src="js/main.js"></script>
   </body>
 </html>
