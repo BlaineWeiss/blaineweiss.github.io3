@@ -1,7 +1,66 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>About | Blaine Weiss</title><link rel="stylesheet" href="assets/styles.css"></head><body>
-<header class="site-header glass"><a class="brand" href="index.html">BLAINE WEISS</a><nav><a href="about.html">About</a><a href="tools.html">Tools</a><a href="publications.html">Publications</a><a href="cv.html">CV</a><a href="contact.html">Contact</a></nav></header>
-<main>
-<section class="page-hero glass"><p class="eyebrow">About Me</p><h1>Neuroscience through visual computation.</h1><p class="lead">I combine in vivo microscopy, astrocyte biology, and computational pipelines to reveal hidden dynamics in neurovascular coupling.</p></section>
-<section class="section glass"><h2>Research Focus</h2><div class="card-grid"><article class="card"><h3>Astrocyte Signaling</h3><p>Characterizing calcium dynamics across microdomain and network scales.</p></article><article class="card"><h3>Arteriolar Coupling</h3><p>Mapping relationships between endfoot activity and vascular responses.</p></article><article class="card"><h3>Computational Methods</h3><p>Building robust, reproducible workflows for imaging quantification.</p></article></div></section>
-</main><footer>© Blaine Weiss</footer>
-</body></html>
+ (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
+diff --git a/about.html b/about.html
+index 7631fcd160cd09cdbb3cb4ae986c1a1b552493e4..53c2d62c3959c55881c3d03373ce9f76c9df3dc9 100644
+--- a/about.html
++++ b/about.html
+@@ -1,7 +1,50 @@
+-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>About | Blaine Weiss</title><link rel="stylesheet" href="assets/styles.css"></head><body>
+-<header class="site-header glass"><a class="brand" href="index.html">BLAINE WEISS</a><nav><a href="about.html">About</a><a href="tools.html">Tools</a><a href="publications.html">Publications</a><a href="cv.html">CV</a><a href="contact.html">Contact</a></nav></header>
+-<main>
+-<section class="page-hero glass"><p class="eyebrow">About Me</p><h1>Neuroscience through visual computation.</h1><p class="lead">I combine in vivo microscopy, astrocyte biology, and computational pipelines to reveal hidden dynamics in neurovascular coupling.</p></section>
+-<section class="section glass"><h2>Research Focus</h2><div class="card-grid"><article class="card"><h3>Astrocyte Signaling</h3><p>Characterizing calcium dynamics across microdomain and network scales.</p></article><article class="card"><h3>Arteriolar Coupling</h3><p>Mapping relationships between endfoot activity and vascular responses.</p></article><article class="card"><h3>Computational Methods</h3><p>Building robust, reproducible workflows for imaging quantification.</p></article></div></section>
+-</main><footer>© Blaine Weiss</footer>
+-</body></html>
++<!DOCTYPE html>
++<html lang="en">
++<head>
++  <meta charset="UTF-8" />
++  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
++  <title>About | Blaine Weiss</title>
++  <link rel="preconnect" href="https://fonts.googleapis.com" />
++  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
++  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet" />
++  <link rel="stylesheet" href="assets/styles.css" />
++</head>
++<body>
++  <header class="site-header glass">
++    <a class="brand" href="index.html">BLAINE WEISS</a>
++    <nav>
++      <a href="index.html">Home</a>
++      <a class="active" href="about.html">About</a>
++      <a href="tools.html">Tools</a>
++      <a href="publications.html">Publications</a>
++      <a href="cv.html">CV</a>
++      <a href="contact.html">Contact</a>
++    </nav>
++  </header>
++
++  <main>
++    <section class="page-hero glass">
++      <p class="eyebrow">About</p>
++      <h1>Neuroscience through advanced imaging, computation, and design.</h1>
++      <p class="lead">I focus on the dynamic relationships between astrocytes, endfeet, and arterioles using in vivo microscopy and computational approaches that convert complex recordings into actionable biological insight.</p>
++    </section>
++
++    <section class="section glass card-grid">
++      <article class="card">
++        <h3>Research Vision</h3>
++        <p class="lead">Resolve the biophysical dialogue between glial signaling and vascular behavior at high spatial and temporal resolution.</p>
++      </article>
++      <article class="card">
++        <h3>Experimental Core</h3>
++        <p class="lead">Two-photon imaging workflows with curated event annotation and robust quality-control practices.</p>
++      </article>
++      <article class="card">
++        <h3>Computational Core</h3>
++        <p class="lead">Signal extraction, segmentation-aware analytics, and interpretable models for event-level neurovascular coupling.</p>
++      </article>
++    </section>
++  </main>
++
++  <footer>© Blaine Weiss • Neurovascular Imaging</footer>
++</body>
++</html>
+ 
+EOF
+)
